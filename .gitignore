@@ -1,0 +1,21 @@
+# VSCode
+.vscode
+
+# WebStorm
+.idea
+
+# OSX
+.DS_Store
+
+# npm
+node_modules
+npm-debug.log
+
+# yarn
+yarn-debug.log
+
+# Build folders
+dist
+
+# Test
+coverage

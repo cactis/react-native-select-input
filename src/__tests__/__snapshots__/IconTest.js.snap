@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders arrow down correctly 1`] = `
+<Image
+  source={
+    Object {
+      "testUri": "../../../src/icons/arrowDown.png",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": 5,
+        "marginTop": 9,
+        "width": 8,
+      },
+      null,
+    ]
+  }
+/>
+`;
+
+exports[`Icon renders arrow up correctly 1`] = `
+<Image
+  source={
+    Object {
+      "testUri": "../../../src/icons/arrowUp.png",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": 5,
+        "marginTop": 9,
+        "width": 8,
+      },
+      null,
+    ]
+  }
+/>
+`;

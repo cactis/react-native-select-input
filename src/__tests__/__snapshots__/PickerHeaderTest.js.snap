@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PickerHeader renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "backgroundColor": "#F8F8F8",
+      "paddingHorizontal": 25,
+      "paddingVertical": 10,
+    }
+  }
+>
+  <TouchableWithoutFeedback
+    onPress={[Function]}
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 14,
+            },
+            null,
+          ]
+        }
+      >
+        Done
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
+</View>
+`;

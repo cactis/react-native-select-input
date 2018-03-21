@@ -1,0 +1,18 @@
+# VSCode
+.vscode
+
+# WebStorm
+.idea
+
+# OSX
+.DS_Store
+
+# ESLint
+.eslintrc
+
+# yarn
+yarn-debug.log
+
+# Jest
+__tests__
+__mocks__
