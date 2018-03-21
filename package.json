@@ -11,46 +11,22 @@
   "devDependencies": {
     "babel-eslint": "^8.2.2",
     "babel-preset-react-native": "^4.0.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.2.2",
     "eslint": "^4.11.0",
     "eslint-config-airbnb": "^15.1.0",
     "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.1.0",
     "eslint-plugin-react-native": "^3.1.0",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "enzyme-to-json": "^3.2.2",
     "jest": "^21.2.1",
+    "prop-types": "~15.6.0",
     "react": "16.0.0",
     "react-dom": "16.0.0",
-    "react-native": "~0.50.3",
-    "prop-types": "~15.6.0"
-  },
-  "peerDependencies": {
-    "react": "*",
-    "react-native": "*",
-    "prop-types": "*"
+    "react-native": "~0.50.3"
   },
   "homepage": "https://github.com/Tele2-NL/react-native-select-input#readme",
-  "license": "MIT",
-  "main": "./src/index.js",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/Tele2-NL/react-native-select-input"
-  },
-  "scripts": {
-    "lint": "eslint ./src",
-    "test": "jest",
-    "ci": "npm run lint && npm run test -- --runInBand"
-  },
-  "keywords": [
-    "select",
-    "picker",
-    "react",
-    "react-native",
-    "ios",
-    "android"
-  ],
   "jest": {
     "preset": "react-native",
     "setupFiles": [
@@ -62,5 +38,29 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ]
+  },
+  "keywords": [
+    "android",
+    "ios",
+    "picker",
+    "react",
+    "react-native",
+    "select"
+  ],
+  "license": "MIT",
+  "main": "./src/index.js",
+  "peerDependencies": {
+    "prop-types": "*",
+    "react": "*",
+    "react-native": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/Tele2-NL/react-native-select-input"
+  },
+  "scripts": {
+    "ci": "npm run lint && npm run test -- --runInBand",
+    "lint": "eslint ./src",
+    "test": "jest"
   }
 }
