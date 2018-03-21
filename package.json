@@ -43,6 +43,14 @@
     "test": "jest",
     "ci": "npm run lint && npm run test -- --runInBand"
   },
+  "keywords": [
+    "select",
+    "picker",
+    "react",
+    "react-native",
+    "ios",
+    "android"
+  ],
   "jest": {
     "preset": "react-native",
     "setupFiles": [
