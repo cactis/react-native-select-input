@@ -26,6 +26,7 @@ exports[`SelectInput renders correctly 1`] = `
             "paddingVertical": 10,
           },
           false,
+          null,
         ]
       }
     >
@@ -128,9 +129,7 @@ exports[`SelectInput renders correctly with different style 1`] = `
         "flex": 1,
         "zIndex": 1,
       },
-      Object {
-        "backgroundColor": "#0000FF",
-      },
+      null,
     ]
   }
 >
@@ -148,6 +147,7 @@ exports[`SelectInput renders correctly with different style 1`] = `
             "paddingVertical": 10,
           },
           false,
+          null,
         ]
       }
     >
@@ -234,6 +234,11 @@ exports[`SelectInput renders correctly with different style 1`] = `
     }
     placeholder="Select a value"
     renderLabel={null}
+    style={
+      Object {
+        "backgroundColor": "#0000FF",
+      }
+    }
     toggleShowOptions={[Function]}
     value="first-value"
     valueStyle={null}
@@ -268,6 +273,7 @@ exports[`SelectInput renders correctly with disabled state 1`] = `
             "paddingVertical": 10,
           },
           false,
+          null,
         ]
       }
     >
@@ -360,6 +366,7 @@ exports[`SelectInput renders correctly with loading state 1`] = `
             "paddingVertical": 10,
           },
           false,
+          null,
         ]
       }
     >
