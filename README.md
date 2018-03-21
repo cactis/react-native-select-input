@@ -11,8 +11,10 @@
 ## Demo
 
 iOS | Android
-:--- | :--- | :--- | :--- | :---
+:--- | :---
 ![iOS](./media/demo-ios.gif)|![Android](./media/demo-android.gif)
+
+> You can try the [demo app here].
 
 ## Usage
 
@@ -41,16 +43,16 @@ export default MyComponent;
 Property | Type | Required | Default value | Description
 :--- | :--- | :--- | :--- | :---
 label|string|no|null|Label to be shown on the top of the input.
-placeholder|string|no|&lt;See the source code&gt;|Placeholder to be shown if the input has no value.
-done|string|no|&lt;See the source code&gt;|String that shows on the header of the select input in iOS.
+placeholder|string|no|string|Placeholder to be shown if the input has no value.
+done|string|no|string|String that shows on the header of the select input in iOS.
 value|string/number|no|null|Current input value.
 options|arrayOf|yes||Options available to be selected.
 disabled|bool|no|false|Whether the input is disabled or not.
 loading|bool|no|false|Whether the input is on loading state or not.
-colors|shape|no|&lt;See the source code&gt;|Colors to easily personalize the input.
-onChange|func|no|&lt;See the source code&gt;|Function to be called whenever the input value is changed.
-renderLabel|func|no|null|Function to render a custom label.
-renderArrowIcon|func|no|null|Function to render a custom arrow icon.
+colors|shape|no|[Check the source code]|Colors to easily personalize the input.
+onChange|function|no|null|Function to be called whenever the input value is changed.
+renderLabel|function|no|null|Function to render a custom label.
+renderArrowIcon|function|no|null|Function to render a custom arrow icon.
 labelStyle|custom|no|null|Custom label style.
 valueStyle|custom|no|null|Custom value style.
 style|custom|no|null|Custom style for the container of the input.
@@ -59,5 +61,7 @@ arrowIcon||no|null|
 ## License
 MIT © [Tele2 Netherlands].
 
+[demo app here]: https://expo.io/@lucasbento/react-native-select-input-example
 [example app]: https://github.com/Tele2-NL/react-native-select-input/tree/master/example
+[Check the source code]: https://github.com/Tele2-NL/react-native-select-input/blob/master/src/SelectInput.js#L60-L64
 [Tele2 Netherlands]: https://github.com/Tele2-NL
