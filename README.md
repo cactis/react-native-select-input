@@ -4,20 +4,60 @@
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/lucasbento/module-boilerplate"><img src="https://travis-ci.org/lucasbento/module-boilerplate.svg?branch=master"></a>
-  <a href="https://github.com/airbnb/javascript"><img src="https://img.shields.io/badge/code%20style-airbnb-blue.svg"></a>
-  <a href="https://github.com/lucasbento/module-boilerplate/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+  <a href="https://travis-ci.org/Tele2-NL/react-native-select-input"><img src="https://travis-ci.org/Tele2-NL/react-native-select-input.svg?branch=master"></a>
+  <a href="https://github.com/Tele2-NL/react-native-select-input/issues"><img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
 </p>
 
-## Getting started
+## Demo
 
-Simply change [index.js](https://github.com/lucasbento/module-boilerplate/blob/master/src/index.js) file to your code.
+iOS | Android
+:--- | :--- | :--- | :--- | :---
+![iOS](./media/demo-ios.gif)|![Android](./media/demo-android.gif)
 
-### Available scripts
+## Usage
 
-1. **Build**: runs Babel & outputs the bundle on `./dist`;
-1. **Lint**: uses ESLint to lint all the files following [Airbnb's JavaScript code style](https://github.com/airbnb/javascript);
-1. **Test**: uses Jest to run the tests;
-1. **Watch**: runs Babel in watch mode to build on file changing.
+```jsx
+import React, { Component } from 'react';
+import SelectInput from '@tele2/react-native-select-input';
 
-> All the scripts can be seen on [package.json](https://github.com/lucasbento/module-boilerplate/blob/master/package.json#36).
+class MyComponent extends Component {
+  render() {
+    <SelectInput
+      options={[{
+        value: 'my-option-value',
+        label: 'My option label',
+      }]}
+    />
+  }
+}
+
+export default MyComponent;
+```
+
+> You can see more examples in the [example app].
+
+## API
+
+Property | Type | Required | Default value | Description
+:--- | :--- | :--- | :--- | :---
+label|string|no|null|Label to be shown on the top of the input.
+placeholder|string|no|&lt;See the source code&gt;|Placeholder to be shown if the input has no value.
+done|string|no|&lt;See the source code&gt;|String that shows on the header of the select input in iOS.
+value|string/number|no|null|Current input value.
+options|arrayOf|yes||Options available to be selected.
+disabled|bool|no|false|Whether the input is disabled or not.
+loading|bool|no|false|Whether the input is on loading state or not.
+colors|shape|no|&lt;See the source code&gt;|Colors to easily personalize the input.
+onChange|func|no|&lt;See the source code&gt;|Function to be called whenever the input value is changed.
+renderLabel|func|no|null|Function to render a custom label.
+renderArrowIcon|func|no|null|Function to render a custom arrow icon.
+labelStyle|custom|no|null|Custom label style.
+valueStyle|custom|no|null|Custom value style.
+style|custom|no|null|Custom style for the container of the input.
+arrowIcon||no|null|
+
+## License
+MIT © [Tele2 Netherlands].
+
+[example app]: https://github.com/Tele2-NL/react-native-select-input/tree/master/example
+[Tele2 Netherlands]: https://github.com/Tele2-NL

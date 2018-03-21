@@ -15,13 +15,28 @@ import Loading from './Loading';
 
 class SelectInput extends Component {
   static propTypes = {
+    /**
+     * Label to be shown on the top of the input.
+     */
     label: PropTypes.string,
+    /**
+     * Placeholder to be shown if the input has no value.
+     */
     placeholder: PropTypes.string,
+    /**
+     * String that shows on the header of the select input in iOS.
+     */
     done: PropTypes.string,
+    /**
+     * Current input value.
+     */
     value: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.number,
     ]),
+    /**
+     * Options available to be selected.
+     */
     options: PropTypes.arrayOf(
       PropTypes.shape({
         value: PropTypes.oneOfType([
@@ -31,18 +46,45 @@ class SelectInput extends Component {
         label: PropTypes.string,
       }),
     ).isRequired,
+    /**
+     * Whether the input is disabled or not.
+     */
     disabled: PropTypes.bool,
+    /**
+     * Whether the input is on loading state or not.
+     */
     loading: PropTypes.bool,
+    /**
+     * Colors to easily personalize the input.
+     */
     colors: PropTypes.shape({
       normal: PropTypes.string,
       light: PropTypes.string,
       dark: PropTypes.string,
     }).isRequired,
+    /**
+     * Function to be called whenever the input value is changed.
+     */
     onChange: PropTypes.func,
+    /**
+     * Function to render a custom label.
+     */
     renderLabel: PropTypes.func,
+    /**
+     * Function to render a custom arrow icon.
+     */
     renderArrowIcon: PropTypes.func,
+    /**
+     * Custom label style.
+     */
     labelStyle: Text.propTypes.style,
+    /**
+     * Custom value style.
+     */
     valueStyle: Text.propTypes.style,
+    /**
+     * Custom style for the container of the input.
+     */
     style: ViewPropTypes.style,
   };
 
