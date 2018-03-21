@@ -16,6 +16,12 @@ iOS | Android
 
 > You can try the [demo app here].
 
+## Installation
+
+```bash
+npm install @tele2/react-native-select-input --save
+```
+
 ## Usage
 
 ```jsx
