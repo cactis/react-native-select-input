@@ -55,7 +55,8 @@ renderLabel|function|no|null|Function to render a custom label.
 renderArrowIcon|function|no|null|Function to render a custom arrow icon.
 labelStyle|custom|no|null|Custom label style.
 valueStyle|custom|no|null|Custom value style.
-style|custom|no|null|Custom style for the container of the input.
+containerStyle|custom|no|null|Custom style for the container of the input.
+innerContainerStyle|custom|no|null|Custom style for the inner container of the input.
 arrowIcon||no|null|
 
 ## License

@@ -85,7 +85,11 @@ class SelectInput extends Component {
     /**
      * Custom style for the container of the input.
      */
-    style: ViewPropTypes.style,
+    containerStyle: ViewPropTypes.style,
+    /**
+     * Custom style for the inner container of the input.
+     */
+    innerContainerStyle: ViewPropTypes.style,
   };
 
   static defaultProps = {
@@ -106,7 +110,8 @@ class SelectInput extends Component {
     renderArrowIcon: null,
     labelStyle: null,
     valueStyle: null,
-    style: null,
+    containerStyle: null,
+    innerContainerStyle: null,
   };
 
   constructor(props) {
@@ -218,18 +223,20 @@ class SelectInput extends Component {
       disabled,
       loading,
       colors,
-      style,
+      containerStyle,
+      innerContainerStyle,
       renderArrowIcon,
       ...props
     } = this.props;
 
     return (
-      <View style={[this.styles.container, style]}>
+      <View style={[this.styles.container, containerStyle]}>
         <TouchableWithoutFeedback onPress={this.handleToggleShowOptions}>
           <View
             style={[
               this.styles.innerContainer,
               this.state.optionsVisible && this.styles.activeInnerContainer,
+              innerContainerStyle,
             ]}
           >
             {this.renderLabel()}
