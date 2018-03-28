@@ -31,6 +31,17 @@ describe('Picker', () => {
     expect(wrapper.dive()).toMatchSnapshot();
   });
 
+  it('renders correctly with a testProperty set', () => {
+    const wrapper = shallow(
+      <Picker
+        {...this.props}
+        testProperty="foo"
+      />,
+    );
+
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
+
   it('should show picker if modal is visible', () => {
     const wrapper = shallow(<Picker {...this.props} />, {
       lifecycleExperimental: true,

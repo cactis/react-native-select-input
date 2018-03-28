@@ -62,6 +62,17 @@ describe('SelectInput', () => {
     expect(wrapper.dive()).toMatchSnapshot();
   });
 
+  it('renders correctly with a testProperty set', () => {
+    const wrapper = shallow(
+      <SelectInput
+        {...this.props}
+        testProperty="foo"
+      />,
+    );
+
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
+
   it('should call onChange prop when the value changes', () => {
     const wrapper = shallow(<SelectInput {...this.props} />);
 

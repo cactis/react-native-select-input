@@ -12,6 +12,7 @@ import {
 import Icon, { ARROW_ICON_TYPES } from './Icon';
 import Picker from './Picker';
 import Loading from './Loading';
+import { testProperties } from './TestProperties';
 
 class SelectInput extends Component {
   static propTypes = {
@@ -90,6 +91,10 @@ class SelectInput extends Component {
      * Custom style for the inner container of the input.
      */
     innerContainerStyle: ViewPropTypes.style,
+    /**
+     * Property for setting a testID (iOS) / accessibilityLabel (Android) for testing
+     */
+    testProperty: PropTypes.string,
   };
 
   static defaultProps = {
@@ -112,6 +117,7 @@ class SelectInput extends Component {
     valueStyle: null,
     containerStyle: null,
     innerContainerStyle: null,
+    testProperty: null,
   };
 
   constructor(props) {
@@ -148,7 +154,7 @@ class SelectInput extends Component {
     this.setState({
       value,
     }, () => this.props.onChange(value));
-  }
+  };
 
   handleToggleShowOptions = () => {
     if (this.props.disabled || this.props.loading) {
@@ -184,7 +190,7 @@ class SelectInput extends Component {
         {this.getValue()}
       </Text>
     );
-  }
+  };
 
   renderLabel = () => {
     const {
@@ -214,7 +220,7 @@ class SelectInput extends Component {
         {label}
       </Text>
     );
-  }
+  };
 
   render() {
     const { value, optionsVisible } = this.state;
@@ -226,12 +232,16 @@ class SelectInput extends Component {
       containerStyle,
       innerContainerStyle,
       renderArrowIcon,
+      testProperty,
       ...props
     } = this.props;
 
     return (
       <View style={[this.styles.container, containerStyle]}>
-        <TouchableWithoutFeedback onPress={this.handleToggleShowOptions}>
+        <TouchableWithoutFeedback
+          onPress={this.handleToggleShowOptions}
+          {...testProperties('select', testProperty)}
+        >
           <View
             style={[
               this.styles.innerContainer,
@@ -263,6 +273,7 @@ class SelectInput extends Component {
             onChange={this.handleChangeValue}
             visible={optionsVisible}
             toggleShowOptions={this.handleToggleShowOptions}
+            testProperty={testProperty}
           />
         )}
       </View>

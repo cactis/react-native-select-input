@@ -6,10 +6,14 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import { testProperties } from './TestProperties';
 
-const PickerHeader = ({ done, doneStyle, toggleShowOptions }) => (
+const PickerHeader = ({ done, doneStyle, testProperty, toggleShowOptions }) => (
   <View style={styles.pickerModalHeader}>
-    <TouchableWithoutFeedback onPress={toggleShowOptions}>
+    <TouchableWithoutFeedback
+      onPress={toggleShowOptions}
+      {...testProperties('header', testProperty)}
+    >
       <View>
         <Text style={[styles.doneText, doneStyle]}>
           {done}
@@ -23,10 +27,12 @@ PickerHeader.propTypes = {
   done: PropTypes.string.isRequired,
   toggleShowOptions: PropTypes.func.isRequired,
   doneStyle: Text.propTypes.style,
+  testProperty: PropTypes.string,
 };
 
 PickerHeader.defaultProps = {
   doneStyle: null,
+  testProperty: null,
 };
 
 const styles = StyleSheet.create({

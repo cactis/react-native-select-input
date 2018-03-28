@@ -35,3 +35,40 @@ exports[`PickerHeader renders correctly 1`] = `
   </TouchableWithoutFeedback>
 </View>
 `;
+
+exports[`PickerHeader renders correctly with a testPropterty set 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "flex-end",
+      "backgroundColor": "#F8F8F8",
+      "paddingHorizontal": 25,
+      "paddingVertical": 10,
+    }
+  }
+>
+  <TouchableWithoutFeedback
+    onPress={[Function]}
+    testID="header-foo"
+  >
+    <View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        ellipsizeMode="tail"
+        style={
+          Array [
+            Object {
+              "color": "#000",
+              "fontSize": 14,
+            },
+            null,
+          ]
+        }
+      >
+        Done
+      </Text>
+    </View>
+  </TouchableWithoutFeedback>
+</View>
+`;

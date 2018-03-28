@@ -64,6 +64,7 @@ valueStyle|custom|no|null|Custom value style.
 containerStyle|custom|no|null|Custom style for the container of the input.
 innerContainerStyle|custom|no|null|Custom style for the inner container of the input.
 arrowIcon||no|null|
+testProperty|string|no|Property for setting a testID (iOS) / accessibilityLabel (Android) for testing|
 
 ## License
 MIT © [Tele2 Netherlands].

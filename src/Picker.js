@@ -31,6 +31,7 @@ class Picker extends Component {
     onChange: PropTypes.func,
     toggleShowOptions: PropTypes.func.isRequired,
     doneStyle: PickerHeader.propTypes.doneStyle,
+    testProperty: PropTypes.string,
   };
 
   static defaultProps = {
@@ -38,6 +39,7 @@ class Picker extends Component {
     value: null,
     onChange: () => {},
     doneStyle: PickerHeader.defaultProps.doneStyle,
+    testProperty: null,
   };
 
   constructor(props) {
@@ -87,6 +89,7 @@ class Picker extends Component {
       done,
       toggleShowOptions,
       doneStyle,
+      testProperty,
     } = this.props;
 
     if (Platform.OS === 'android') {
@@ -100,13 +103,14 @@ class Picker extends Component {
         transparent
         onRequestClose={toggleShowOptions}
       >
-        <TouchableWithoutFeedback onPress={toggleShowOptions}>
+        <TouchableWithoutFeedback onPress={toggleShowOptions} accessible={false}>
           <View style={this.styles.pickerCloseAreaContainer}>
             <SlideUpAnimation visible={showPicker}>
               <PickerHeader
                 done={done}
                 toggleShowOptions={toggleShowOptions}
                 doneStyle={doneStyle}
+                testProperty={testProperty}
               />
 
               {this.renderPicker()}
