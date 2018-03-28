@@ -9,6 +9,7 @@ exports[`Picker renders correctly 1`] = `
   visible={false}
 >
   <TouchableWithoutFeedback
+    accessible={false}
     onPress={[Function]}
   >
     <View
@@ -29,6 +30,68 @@ exports[`Picker renders correctly 1`] = `
         <PickerHeader
           done="Done"
           doneStyle={null}
+          testProperty={null}
+          toggleShowOptions={[Function]}
+        />
+        <Picker
+          mode="dialog"
+          onValueChange={[Function]}
+          selectedValue="first-value"
+          style={
+            Object {
+              "backgroundColor": "#D9D9D9",
+              "width": "100%",
+            }
+          }
+        >
+          <PickerItem
+            key="first-value"
+            label="First value"
+            value="first-value"
+          />
+          <PickerItem
+            key="second-value"
+            label="Second value"
+            value="second-value"
+          />
+        </Picker>
+      </SlideUpAnimation>
+    </View>
+  </TouchableWithoutFeedback>
+</Modal>
+`;
+
+exports[`Picker renders correctly with a testProperty set 1`] = `
+<Modal
+  animationType="fade"
+  hardwareAccelerated={false}
+  onRequestClose={[Function]}
+  transparent={true}
+  visible={false}
+>
+  <TouchableWithoutFeedback
+    accessible={false}
+    onPress={[Function]}
+  >
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(0,0,0,0.1)",
+          "borderColor": "red",
+          "flex": 1,
+          "justifyContent": "flex-end",
+        }
+      }
+    >
+      <SlideUpAnimation
+        onAnimationEnd={[Function]}
+        style={null}
+        visible={false}
+      >
+        <PickerHeader
+          done="Done"
+          doneStyle={null}
+          testProperty="foo"
           toggleShowOptions={[Function]}
         />
         <Picker

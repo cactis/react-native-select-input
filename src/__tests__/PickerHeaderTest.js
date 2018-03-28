@@ -17,6 +17,17 @@ describe('PickerHeader', () => {
     expect(wrapper.dive()).toMatchSnapshot();
   });
 
+  it('renders correctly with a testPropterty set', () => {
+    const wrapper = shallow(
+      <PickerHeader
+        {...this.props}
+        testProperty="foo"
+      />,
+    );
+
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
+
   it('should close options if pressed', () => {
     const wrapper = shallow(
       <PickerHeader
