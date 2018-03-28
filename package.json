@@ -1,7 +1,7 @@
 {
   "name": "@tele2/react-native-select-input",
   "description": "Easy-peasy select input picker for React Native",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Lucas Bento",
     "email": "lucas.bento@tele2.com",
