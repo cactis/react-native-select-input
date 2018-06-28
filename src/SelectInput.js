@@ -72,6 +72,14 @@ class SelectInput extends Component {
      */
     renderLabel: PropTypes.func,
     /**
+     * Props to be passed to the label `<Text />` component.
+     */
+    labelProps: PropTypes.object,
+    /**
+     * Props to be passed to the value `<Text />` component.
+     */
+    valueProps: PropTypes.object,
+    /**
      * Function to render a custom arrow icon.
      */
     renderArrowIcon: PropTypes.func,
@@ -79,6 +87,14 @@ class SelectInput extends Component {
      * Custom label style.
      */
     labelStyle: Text.propTypes.style,
+    /**
+     * Custom style for the loading container.
+     */
+    loadingContainerStyle: ViewPropTypes.style,
+    /**
+     * Custom style for the value container.
+     */
+    valueContainerStyle: ViewPropTypes.style,
     /**
      * Custom value style.
      */
@@ -112,8 +128,12 @@ class SelectInput extends Component {
     },
     onChange: () => {},
     renderLabel: null,
+    labelProps: {},
+    valueProps: {},
     renderArrowIcon: null,
     labelStyle: null,
+    loadingContainerStyle: null,
+    valueContainerStyle: null,
     valueStyle: null,
     containerStyle: null,
     innerContainerStyle: null,
@@ -169,11 +189,11 @@ class SelectInput extends Component {
   };
 
   renderValue = () => {
-    const { loading, disabled, valueStyle } = this.props;
+    const { loading, disabled, loadingContainerStyle, valueStyle, valueProps } = this.props;
 
     if (loading) {
       return (
-        <View style={this.styles.loadingContainer}>
+        <View style={[this.styles.loadingContainer, loadingContainerStyle]}>
           <Loading />
         </View>
       );
@@ -181,6 +201,7 @@ class SelectInput extends Component {
 
     return (
       <Text
+        {...valueProps}
         style={[
           this.styles.value,
           disabled && this.styles.valueDisabled,
@@ -198,6 +219,7 @@ class SelectInput extends Component {
       renderLabel,
       disabled,
       loading,
+      labelProps,
       labelStyle,
     } = this.props;
 
@@ -211,6 +233,7 @@ class SelectInput extends Component {
 
     return (
       <Text
+        {...labelProps}
         style={[
           this.styles.label,
           (disabled || loading) && this.styles.labelDisabled,
@@ -229,6 +252,7 @@ class SelectInput extends Component {
       disabled,
       loading,
       colors,
+      valueContainerStyle,
       containerStyle,
       innerContainerStyle,
       renderArrowIcon,
@@ -251,7 +275,7 @@ class SelectInput extends Component {
           >
             {this.renderLabel()}
 
-            <View style={this.styles.valueContainer}>
+            <View style={[this.styles.valueContainer, valueContainerStyle]}>
               {this.renderValue()}
 
               <Icon

@@ -58,8 +58,12 @@ loading|bool|no|false|Whether the input is on loading state or not.
 colors|shape|no|[Check here][colors]|Colors to easily personalize the input.
 onChange|function|no|null|Function to be called whenever the input value is changed.
 renderLabel|function|no|null|Function to render a custom label.
+labelProps|object|no|null|Props to be passed to the label `<Text />` component.
+valueProps|object|no|null|Props to be passed to the value `<Text />` component.
 renderArrowIcon|function|no|null|Function to render a custom arrow icon.
 labelStyle|custom|no|null|Custom label style.
+loadingContainerStyle|custom|no|null|Custom style for the loading container.
+valueContainerStyle|custom|no|null|Custom style for the value container.
 valueStyle|custom|no|null|Custom value style.
 containerStyle|custom|no|null|Custom style for the container of the input.
 innerContainerStyle|custom|no|null|Custom style for the inner container of the input.
