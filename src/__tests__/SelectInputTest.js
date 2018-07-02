@@ -62,6 +62,33 @@ describe('SelectInput', () => {
     expect(wrapper.dive()).toMatchSnapshot();
   });
 
+  it('renders correctly with different loading container style', () => {
+    const wrapper = shallow(
+      <SelectInput
+        {...this.props}
+        loading
+        loadingContainerStyle={{
+          backgroundColor: '#0000FF',
+        }}
+      />,
+    );
+
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
+
+  it('renders correctly with different value container style', () => {
+    const wrapper = shallow(
+      <SelectInput
+        {...this.props}
+        valueContainerStyle={{
+          backgroundColor: '#0000FF',
+        }}
+      />,
+    );
+
+    expect(wrapper.dive()).toMatchSnapshot();
+  });
+
   it('renders correctly with a testProperty set', () => {
     const wrapper = shallow(
       <SelectInput
@@ -90,5 +117,39 @@ describe('SelectInput', () => {
     wrapper.find(TouchableWithoutFeedback).props().onPress();
 
     expect(wrapper.state().optionsVisible).toBe(true);
+  });
+
+  it('should pass label props to text component', () => {
+    const labelProps = {
+      specificProp: 'specificProp',
+    };
+
+    const wrapper = shallow(
+      <SelectInput
+        {...this.props}
+        labelProps={labelProps}
+      />,
+    );
+
+    const value = shallow(wrapper.instance().renderLabel());
+
+    expect(value.find('Text').first().props()).toHaveProperty('specificProp', labelProps.specificProp);
+  });
+
+  it('should pass value props to text component', () => {
+    const valueProps = {
+      specificProp: 'specificProp',
+    };
+
+    const wrapper = shallow(
+      <SelectInput
+        {...this.props}
+        valueProps={valueProps}
+      />,
+    );
+
+    const value = shallow(wrapper.instance().renderValue());
+
+    expect(value.find('Text').first().props()).toHaveProperty('specificProp', valueProps.specificProp);
   });
 });
